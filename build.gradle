@@ -7,6 +7,7 @@ buildscript {
         targetSdkVersion = 31
 
         //App dependencies
+        fragmentVersion = "1.4.1"
         gradleVersion = "7.2.1"
         hiltVersion = "2.41"
         kotlinVersion = "1.6.21"
