@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/btn_toolbar_search.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/ic_menu_burger.xml" value="0.1465" />
         <entry key="app/src/main/res/drawable/menu-burger_24.xml" value="0.1465" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14944275582573455" />

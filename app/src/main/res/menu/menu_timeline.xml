@@ -2,11 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <item
-        android:id="@+id/action_more"
-        android:title="@string/action_more"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_menu_burger"/>
+<!--    <item-->
+<!--        android:id="@+id/action_more"-->
+<!--        android:title="@string/action_more"-->
+<!--        app:showAsAction="always"-->
+<!--        android:icon="@drawable/ic_menu_burger"/>-->
 
     <item
         android:id="@+id/action_refactor"
