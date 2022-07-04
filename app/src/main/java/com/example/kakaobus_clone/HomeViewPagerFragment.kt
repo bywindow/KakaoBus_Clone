@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.kakaobus_clone.databinding.FragmentViewPagerBinding
 
@@ -17,6 +18,7 @@ class HomeViewPagerFragment : Fragment() {
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val viewPager = binding.viewPager
 
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         return binding.root
     }

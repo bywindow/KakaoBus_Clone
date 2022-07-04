@@ -8,4 +8,9 @@
         app:showAsAction="always"
         android:icon="@drawable/ic_menu_burger"/>
 
+    <item
+        android:id="@+id/action_refactor"
+        android:title="@string/action_refactor"
+        app:showAsAction="always"/>
+
 </menu>

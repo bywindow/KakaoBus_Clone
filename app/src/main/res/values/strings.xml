@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">KakaoBus</string>
     <string name="action_more">more features</string>
+    <string name="action_refactor">편집</string>
+    <string name="toolbar_search">버스 또는 정류장 검색</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
