@@ -2,14 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/view_pager_fragment">
 
     <fragment
         android:id="@+id/view_pager_fragment"
         android:name="com.example.kakaobus_clone.HomeViewPagerFragment"
         tools:layout="@layout/fragment_view_pager">
-        
+
 <!--        action 추가 -->
     </fragment>
 
