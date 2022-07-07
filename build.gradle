@@ -7,11 +7,14 @@ buildscript {
         targetSdkVersion = 31
 
         //App dependencies
-        fragmentVersion = "1.4.1"
+        fragmentVersion = "1.5.0"
         gradleVersion = "7.2.1"
+        gsonVersion = "2.9.0"
         hiltVersion = "2.41"
         kotlinVersion = "1.6.21"
-        navigationVersion = "2.4.2"
+        ktxVersion = "1.8.0"
+        navigationVersion = "2.5.0"
+        retrofitVersion = "2.9.0"
         workVersion = "2.7.1"
     }
 
