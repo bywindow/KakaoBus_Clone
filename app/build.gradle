@@ -49,6 +49,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion" // for mapping JSON
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion" // for api
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLoggingVersion"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
