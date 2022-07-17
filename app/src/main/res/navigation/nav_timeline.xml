@@ -12,7 +12,13 @@
 <!--        action 추가 -->
     </fragment>
 
-<!--    <fragment-->
+    <fragment
+        android:id="@+id/timelinesFragment"
+        android:name="com.example.kakaobus_clone.TimelinesFragment"
+        android:label="fragment_tiemlines"
+        tools:layout="@layout/fragment_tiemlines" />
+
+    <!--    <fragment-->
 <!--        android:id="@+id/FirstFragment"-->
 <!--        android:name="com.example.kakaobus_clone.FirstFragment"-->
 <!--        android:label="@string/first_fragment_label"-->

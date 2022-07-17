@@ -13,7 +13,7 @@ class HomeViewPagerFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val viewPager = binding.viewPager
 

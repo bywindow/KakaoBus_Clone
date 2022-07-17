@@ -20,6 +20,7 @@ interface BusPosService {
         @Query("busRouteId") busRouteId: String,
         @Query("startOrd") startOrd: Int,
         @Query("endOrd") endOrd: Int,
+        @Query("resultType") resultType : String = "json"
     ): BusPosByRouteStListResponse
 
     companion object {
