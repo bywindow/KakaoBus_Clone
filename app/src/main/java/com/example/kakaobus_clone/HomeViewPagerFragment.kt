@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.example.kakaobus_clone.adapters.HelpBannerAdapter
 import com.example.kakaobus_clone.data.assets.HelpBannerSample
 import com.example.kakaobus_clone.data.models.HelpBanner
@@ -18,26 +21,32 @@ class HomeViewPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
-        val viewPager = binding.cardViewPager
+        val cardViewPager = binding.cardViewPager
+        val menuHost: MenuHost = requireActivity()
 
-        viewPager.adapter = HelpBannerAdapter(HelpBannerSample())
+        cardViewPager.adapter = HelpBannerAdapter(HelpBannerSample())
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
-        setHasOptionsMenu(true)
+        initMenu(menuHost)
+
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_timeline, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_refactor -> {
-                Log.d("DEBUG","press 편집")
-                true
+    private fun initMenu(menuHost: MenuHost) {
+        menuHost.addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_timeline, menu)
             }
-            else -> super.onOptionsItemSelected(item)
-        }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.action_refactor -> {
+                        Log.d("DEBUG","press 편집")
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 }
