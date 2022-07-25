@@ -5,6 +5,9 @@ import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.kakaobus_clone.adapters.HelpBannerAdapter
+import com.example.kakaobus_clone.data.assets.HelpBannerSample
+import com.example.kakaobus_clone.data.models.HelpBanner
 import com.example.kakaobus_clone.databinding.FragmentViewPagerBinding
 
 class HomeViewPagerFragment : Fragment() {
@@ -15,8 +18,9 @@ class HomeViewPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
-        val viewPager = binding.viewPager
+        val viewPager = binding.cardViewPager
 
+        viewPager.adapter = HelpBannerAdapter(HelpBannerSample())
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         setHasOptionsMenu(true)
