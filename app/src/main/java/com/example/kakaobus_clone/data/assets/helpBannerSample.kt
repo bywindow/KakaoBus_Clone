@@ -3,7 +3,7 @@ package com.example.kakaobus_clone.data.assets
 import com.example.kakaobus_clone.R
 import com.example.kakaobus_clone.data.models.HelpBanner
 
-fun HelpBannerSample(): List<HelpBanner> {
+fun helpBannerSample(): List<HelpBanner> {
     return listOf(
         HelpBanner(
             image = R.drawable.ic_first_banner,
