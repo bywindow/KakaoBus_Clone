@@ -10,13 +10,22 @@
         tools:layout="@layout/fragment_view_pager">
 
 <!--        action 추가 -->
+        <action
+            android:id="@+id/action_view_pager_fragment_to_timelinesFragment"
+            app:destination="@id/timelinesFragment"/>
+
     </fragment>
 
     <fragment
         android:id="@+id/timelinesFragment"
         android:name="com.example.kakaobus_clone.TimelinesFragment"
         android:label="fragment_tiemlines"
-        tools:layout="@layout/fragment_tiemlines" />
+        tools:layout="@layout/fragment_tiemlines">
+        <argument
+            android:name="station"
+            app:argType="com.example.kakaobus_clone.data.models.MyListStation" />
+    </fragment>
+
 
     <!--    <fragment-->
 <!--        android:id="@+id/FirstFragment"-->

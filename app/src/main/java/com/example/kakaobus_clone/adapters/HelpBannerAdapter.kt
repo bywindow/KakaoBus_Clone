@@ -1,5 +1,6 @@
 package com.example.kakaobus_clone.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kakaobus_clone.R
 import com.example.kakaobus_clone.data.models.HelpBanner
+import com.example.kakaobus_clone.databinding.ListBannerCardBinding
 
 class HelpBannerAdapter(private var bannerList: List<HelpBanner>):
     RecyclerView.Adapter<HelpBannerAdapter.ViewHolder>() {
@@ -43,10 +45,20 @@ class HelpBannerAdapter(private var bannerList: List<HelpBanner>):
         val bannerComment: TextView = itemView.findViewById(R.id.banner_comment_text)
 
         init {
-            bannerLayout.setOnClickListener { v: View ->
+            itemView.setOnClickListener {
                 val position = adapterPosition
+                Log.d("BannerAdapter", "Click")
                 Toast.makeText(itemView.context, "${position}번째 도움말을 클릭하셨습니다.", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
+//    class ViewHolder(
+//        private var binding: ListBannerCardBinding
+//    ) : RecyclerView.ViewHolder(binding.root) {
+//
+//        init {
+//
+//        }
+//    }
 }

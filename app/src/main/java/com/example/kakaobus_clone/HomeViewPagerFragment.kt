@@ -12,7 +12,6 @@ import com.example.kakaobus_clone.adapters.HelpBannerAdapter
 import com.example.kakaobus_clone.adapters.MyListStationAdapter
 import com.example.kakaobus_clone.data.assets.helpBannerSample
 import com.example.kakaobus_clone.data.assets.myListStationSample
-import com.example.kakaobus_clone.data.models.HelpBanner
 import com.example.kakaobus_clone.databinding.FragmentViewPagerBinding
 
 class HomeViewPagerFragment : Fragment() {

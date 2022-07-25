@@ -4,11 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
-
+        <variable
+            name="viewmodel"
+            type="com.example.kakaobus_clone.viewmodels.MyListStationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,16 +17,17 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:onClick="@{clickListener}"
-        android:paddingTop="8dp"
+        android:paddingTop="15dp"
         android:paddingStart="16dp"
-        android:paddingBottom="8dp"
+        android:paddingBottom="15dp"
         android:paddingEnd="16dp">
 
         <TextView
             android:id="@+id/station_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="station name"
+            android:text="@{viewmodel.station.stationName}"
+            tools:text="station name"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@id/direction_text"
@@ -36,7 +38,9 @@
             android:id="@+id/direction_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="direction desc"
+            android:layout_marginTop="3dp"
+            android:text="@{viewmodel.station.direction}"
+            tools:text="direction desc"
             android:textColor="@color/gray_300"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -45,14 +49,17 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_bus_button"
-            android:layout_width="56dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_add_bus_rounded"
             android:drawableLeft="@drawable/ic_plus"
+            android:minWidth="0dp"
             android:minHeight="0dp"
             android:paddingVertical="4dp"
-            android:paddingHorizontal="6dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
             android:text="버스"
+            android:textSize="12sp"
             android:textColor="@color/gray_300"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
