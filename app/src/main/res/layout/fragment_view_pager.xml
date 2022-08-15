@@ -16,28 +16,28 @@
             android:fitsSystemWindows="true"
             android:theme="@style/Theme.KakaoBus_Clone.AppBarOverlay">
 
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/toolbar"
-                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#FFFFFF"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="parallax"
+                app:navigationIcon="@drawable/ic_menu_burger">
+
+                <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="#FFFFFF"
-                    app:contentInsetStart="0dp"
-                    app:contentInsetStartWithNavigation="0dp"
-                    app:layout_collapseMode="parallax"
-                    app:navigationIcon="@drawable/ic_menu_burger">
+                    android:layout_height="36dp"
+                    android:background="@drawable/btn_toolbar_search"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="0dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/toolbar_search"
+                    android:textColor="@color/gray_300" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:background="@drawable/btn_toolbar_search"
-                        android:gravity="start|center_vertical"
-                        android:minHeight="0dp"
-                        android:paddingHorizontal="10dp"
-                        android:text="@string/toolbar_search"
-                        android:textColor="@color/gray_300" />
-
-                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -45,7 +45,7 @@
             android:id="@+id/card_view_pager"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_list_view"
@@ -54,7 +54,7 @@
             android:layout_marginTop="10dp"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/my_list_item"/>
+            tools:listitem="@layout/my_list_item" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

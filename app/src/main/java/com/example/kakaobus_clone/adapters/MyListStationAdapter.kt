@@ -25,12 +25,16 @@ class MyListStationAdapter(private var stationList: List<MyListStation>):
     ): RecyclerView.ViewHolder(binding.root) {
         val stationName: TextView = itemView.findViewById(R.id.station_text)
         val direction: TextView = itemView.findViewById(R.id.direction_text)
+
         init {
             binding.setClickListener {
                 binding.viewmodel?.station?.let { station ->
                     navigateToDetail(station, it)
                     Log.d("station", station.toString())
                 }
+            }
+            binding.setAddBusClickListener {
+
             }
         }
         private fun navigateToDetail(station: MyListStation, view: View){

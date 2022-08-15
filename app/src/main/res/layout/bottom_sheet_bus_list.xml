@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="busNumber"
+            type="String" />
+        <variable
+            name="viewmodel"
+            type="com.example.kakaobus_clone.viewmodels.BottomSheetAddBusViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/default_horizontal_padding"
+        android:paddingVertical="12sp">
+
+        <TextView
+            android:id="@+id/bottom_sheet_bus_number_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{busNumber}"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="146"
+            tools:textColor="@android:color/holo_blue_dark" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/bottom_sheet_bus_select_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:onClick="@{clickListener}"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -69,7 +69,7 @@ class TimelinesFragment : Fragment() {
                 call: Call<getArrInfoByRouteAllResponse>,
                 response: Response<getArrInfoByRouteAllResponse>
             ) {
-                Log.d("fetch", "success : ${response.body().toString()}")
+                Log.d("fetch", "success : ${response.body()?.msgBody?.itemList?.size}")
             }
 
             override fun onFailure(call: Call<getArrInfoByRouteAllResponse>, t: Throwable) {

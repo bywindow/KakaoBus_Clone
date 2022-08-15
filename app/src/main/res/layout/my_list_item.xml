@@ -10,6 +10,9 @@
         <variable
             name="viewmodel"
             type="com.example.kakaobus_clone.viewmodels.MyListStationViewModel" />
+        <variable
+            name="addBusClickListener"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_add_bus_rounded"
-            android:drawableLeft="@drawable/ic_plus"
+            android:drawableStart="@drawable/ic_plus"
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:paddingVertical="4dp"
@@ -61,6 +64,7 @@
             android:text="버스"
             android:textSize="12sp"
             android:textColor="@color/gray_300"
+            android:onClick="@{addBusClickListener}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

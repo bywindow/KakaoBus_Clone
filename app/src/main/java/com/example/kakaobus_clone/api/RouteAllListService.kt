@@ -1,5 +1,6 @@
 package com.example.kakaobus_clone.api
 
+import com.example.kakaobus_clone.BuildConfig
 import com.example.kakaobus_clone.data.getArrInfoByRouteAllResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,7 +14,7 @@ interface RouteAllListService {
 
     @GET("getArrInfoByRouteAll")
     fun getArrInfoByRouteAll(
-        @Query("serviceKey", encoded=true) serviceKey: String = "5jRcg6UTTUfc60SYpKcEo%2BUv05mFRuptzErNW90YD8XP%2FmMxLZOoU%2BIPAe4OO767WTvvfiAYFwHiuLVDkzfSog%3D%3D",
+        @Query("serviceKey", encoded=true) serviceKey: String = BuildConfig.API_SERVICE_KEY,
         @Query("busRouteId") busRouteId: String,
         @Query("resultType") resultType: String = "json"
     ): Call<getArrInfoByRouteAllResponse>
