@@ -55,8 +55,4 @@ class HomeViewPagerFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    private fun initBottomSheetDialog() {
-        val bottomSheetDialog = BottomSheetDialog(requireContext())
-        bottomSheetDialog.setContentView(layoutInflater.inflate(R.layout.bottom_sheet_add_bus, null))
-    }
 }

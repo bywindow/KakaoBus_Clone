@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kakaobus_clone.AddBusFragment
 import com.example.kakaobus_clone.HomeViewPagerFragment
 import com.example.kakaobus_clone.HomeViewPagerFragmentDirections
 import com.example.kakaobus_clone.R
@@ -34,12 +35,19 @@ class MyListStationAdapter(private var stationList: List<MyListStation>):
                 }
             }
             binding.setAddBusClickListener {
-
+                binding.viewmodel?.station?.let { station ->
+                    openBottomSheetDialog(station, it)
+                }
             }
         }
         private fun navigateToDetail(station: MyListStation, view: View){
             val direction = HomeViewPagerFragmentDirections
                 .actionViewPagerFragmentToTimelinesFragment(station)
+            view.findNavController().navigate(direction)
+        }
+        private fun openBottomSheetDialog(station: MyListStation, view: View) {
+            val direction = HomeViewPagerFragmentDirections
+                .actionViewPagerFragmentToAddBusFragment(station)
             view.findNavController().navigate(direction)
         }
         fun bind(station: MyListStation) {
