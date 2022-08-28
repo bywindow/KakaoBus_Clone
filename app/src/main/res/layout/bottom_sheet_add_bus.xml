@@ -22,7 +22,10 @@
             android:id="@+id/bottom_sheet_title_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp">
+            android:paddingBottom="20dp"
+            app:behavior_draggable="false"
+            app:behavior_hideable="true"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
             <TextView
                 android:id="@+id/bottom_sheet_station_name"
@@ -65,9 +68,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:layout_constraintTop_toBottomOf="@id/bottom_sheet_direction"
                 android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/bottom_sheet_direction"
+                tools:listitem="@layout/bottom_sheet_bus_list" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

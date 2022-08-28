@@ -1,5 +1,6 @@
 package com.example.kakaobus_clone
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -13,6 +14,7 @@ import com.example.kakaobus_clone.adapters.MyListStationAdapter
 import com.example.kakaobus_clone.data.assets.helpBannerSample
 import com.example.kakaobus_clone.data.assets.myListStationSample
 import com.example.kakaobus_clone.databinding.FragmentViewPagerBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class HomeViewPagerFragment : Fragment() {
 
@@ -51,5 +53,10 @@ class HomeViewPagerFragment : Fragment() {
                 }
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+    }
+
+    private fun initBottomSheetDialog() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext())
+        bottomSheetDialog.setContentView(layoutInflater.inflate(R.layout.bottom_sheet_add_bus, null))
     }
 }
