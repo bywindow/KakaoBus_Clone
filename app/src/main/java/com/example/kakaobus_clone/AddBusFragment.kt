@@ -2,6 +2,7 @@ package com.example.kakaobus_clone
 
 import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,15 +29,18 @@ class AddBusFragment : BottomSheetDialogFragment() {
             Application()
         )).get(BottomSheetAddBusViewModel::class.java)
 
-        subscribeUi()
+        subscribeUi(binding, busListViewModel)
 
         return binding.root
     }
 
-    private fun subscribeUi() {
-        addBusAdapter = BottomSheetAddBusAdapter().apply { setHasStableIds(true) }
-        binding.bottomSheetBusListRecyclerview.adapter = addBusAdapter
-
+    private fun subscribeUi(binding: FragmentAddBusBinding, viewModel: BottomSheetAddBusViewModel) {
+        viewModel.routeList.observe(this) {
+            viewModel.routeList.value?.let {
+                addBusAdapter = BottomSheetAddBusAdapter(it).apply { setHasStableIds(true) }
+                binding.bottomSheetBusListRecyclerview.adapter = addBusAdapter
+            }
+        }
         binding.bottomSheetStationName.text = args.station.stationName
         binding.bottomSheetDirection.text = args.station.direction
     }

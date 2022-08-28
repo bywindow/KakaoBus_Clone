@@ -8,9 +8,6 @@
             name="clickListener"
             type="android.view.View.OnClickListener" />
         <variable
-            name="busNumber"
-            type="String" />
-        <variable
             name="viewmodel"
             type="com.example.kakaobus_clone.viewmodels.BottomSheetAddBusViewModel" />
     </data>
@@ -25,7 +22,6 @@
             android:id="@+id/bottom_sheet_bus_number_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{busNumber}"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,6 @@
 package com.example.kakaobus_clone.adapters
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,9 +13,9 @@ import com.example.kakaobus_clone.data.models.RouteByStation
 import com.example.kakaobus_clone.data.models.RouteByStationList
 import com.example.kakaobus_clone.databinding.BottomSheetBusListBinding
 
-class BottomSheetAddBusAdapter: RecyclerView.Adapter<BottomSheetAddBusAdapter.ViewHolder>() {
+class BottomSheetAddBusAdapter(routeByStation: RouteByStation) : RecyclerView.Adapter<BottomSheetAddBusAdapter.ViewHolder>() {
 
-    private var items : RouteByStation = RouteByStation(RouteByStationList(ArrayList()))
+    private var items = routeByStation
     private val TYPE_HEADER: Int = 0
     private val TYPE_ITEM: Int = 1
 
@@ -57,5 +58,11 @@ class BottomSheetAddBusAdapter: RecyclerView.Adapter<BottomSheetAddBusAdapter.Vi
 
     override fun getItemViewType(position: Int): Int {
         return position
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    internal fun setData(newItems: RouteByStation) {
+        this.items = newItems
+        notifyDataSetChanged()
     }
 }
