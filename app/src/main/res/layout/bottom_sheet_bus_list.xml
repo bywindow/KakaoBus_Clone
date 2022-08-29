@@ -31,10 +31,11 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/bottom_sheet_bus_select_button"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:onClick="@{clickListener}"
-
+            android:background="@drawable/ic_circle_add"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

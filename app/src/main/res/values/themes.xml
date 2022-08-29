@@ -24,6 +24,11 @@
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <style name="Theme.KakaoBus_Clone.BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="behavior_draggable">false</item>
+        <item name="background">@color/white</item>
+    </style>
+
     <style name="Theme.KakaoBus_Clone.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
     <style name="Theme.KakaoBus_Clone.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
