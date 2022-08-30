@@ -5,14 +5,16 @@
 
     <data>
         <variable
-            name="clickListener"
-            type="android.view.View.OnClickListener" />
-        <variable
             name="viewmodel"
             type="com.example.kakaobus_clone.viewmodels.BottomSheetAddBusViewModel" />
+
+        <variable
+            name="activity"
+            type="com.example.kakaobus_clone.AddBusFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bus_list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/default_horizontal_padding"
@@ -33,7 +35,6 @@
             android:id="@+id/bottom_sheet_bus_select_button"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:onClick="@{clickListener}"
             android:background="@drawable/ic_circle_add"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"

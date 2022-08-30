@@ -11,5 +11,7 @@
     <color name="gray_200">#E4E4E4</color>
     <color name="bottom_sheet_bus_type_field">#D9D9D9</color>
     <color name="gray_300">#979797</color>
+    <color name="blue_100">#2196F3</color>
+    <color name="red_100">#AF061F</color>
 
 </resources>

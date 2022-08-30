@@ -24,11 +24,11 @@ class BottomSheetAddBusAdapter(routeByStation: RouteByStation) : RecyclerView.Ad
         var isStarred : MutableMap<String, Boolean> = mutableMapOf( "0" to false)
 
         init {
-            binding.setClickListener { view ->
-                Log.d("arsId", isStarred.entries.toString())
-                var cur = isStarred.getOrDefault(binding.bottomSheetBusNumberTextView.text, false)
-                isStarred[binding.bottomSheetBusNumberTextView.text.toString()] = !cur
-            }
+//            binding.setClickListener { view ->
+//                Log.d("arsId", isStarred.entries.toString())
+//                var cur = isStarred.getOrDefault(binding.bottomSheetBusNumberTextView.text, false)
+//                isStarred[binding.bottomSheetBusNumberTextView.text.toString()] = !cur
+//            }
         }
 
         fun bind(item: RouteByStationComponent, flag: Boolean) {
