@@ -19,8 +19,8 @@ class BottomSheetAddBusViewModel(private val repository: RouteByStationRepositor
     private val _typedRoute = MutableLiveData<Map<String, String>>()
     val typedRoute: LiveData<Map<String, String>>
         get() = _typedRoute
-    private val _starredRoute = MutableLiveData<Map<String, Boolean>>()
-    val starredRoute: LiveData<Map<String, Boolean>>
+    private val _starredRoute = MutableLiveData<MutableMap<String, Boolean>>()
+    val starredRoute: LiveData<MutableMap<String, Boolean>>
         get() = _starredRoute
     val busTypes = arrayListOf<String>("공용버스", "공항버스", "마을버스", "간선버스", "지선버스", "순환버스", "광역버스", "광역버스", "직행버스", "폐지버스")
 
@@ -44,6 +44,13 @@ class BottomSheetAddBusViewModel(private val repository: RouteByStationRepositor
             _starredRoute.value = starredTemp
 //            Log.d("arsId", _typedRoute.value?.entries.toString())
         }
+    }
+
+    fun addBusButtonClicked(route: String) {
+        val cur = _starredRoute.value?.get(route)
+        val next = cur != true
+        _starredRoute.value?.put(route, next)
+        Log.d("arsId", route)
     }
 
     // Factory Pattern

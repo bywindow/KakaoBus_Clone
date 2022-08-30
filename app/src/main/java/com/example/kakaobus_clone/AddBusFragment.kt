@@ -45,7 +45,8 @@ class AddBusFragment : BottomSheetDialogFragment() {
     }
 
     private fun subscribeUi(binding: FragmentAddBusBinding, viewModel: BottomSheetAddBusViewModel) {
-        viewModel.typedRoute.observe(this) {
+        viewModel.starredRoute.observe(this) { star ->
+            Log.d("arsId", "change")
             viewModel.typedRoute.value?.let { type ->
                 (0..10).forEach { i ->
                     if (type.containsKey(i.toString())) {
@@ -57,8 +58,9 @@ class AddBusFragment : BottomSheetDialogFragment() {
                             Log.d("arsId", it)
                             val busListView = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_bus_list, null, false)
                             busListView.findViewById<TextView>(R.id.bottom_sheet_bus_number_textView).text = it
-                            busListView.findViewById<AppCompatImageButton>(R.id.bottom_sheet_bus_select_button).setOnClickListener {
-                                if (viewModel.starredRoute.value?.get(it.toString()) == true) {
+                            busListView.findViewById<AppCompatImageButton>(R.id.bottom_sheet_bus_select_button).setOnClickListener { btn ->
+                                viewModel.addBusButtonClicked(it)
+                                if (star.get(it.toString()) == true) {
                                     Toast.makeText(requireContext(), "즐겨찾기가 제거되었습니다.", Toast.LENGTH_SHORT).show()
                                 } else {
                                     busListView.findViewById<AppCompatImageButton>(R.id.bottom_sheet_bus_select_button).setBackgroundResource(R.drawable.ic_check)
